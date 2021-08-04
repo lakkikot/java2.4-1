@@ -53,9 +53,10 @@ public class StatsService {
     public int monthLowerAverage(int[] sales) {
 
         int monthLow = 0; // счетчик месяцев
+        int average = averageSale(sales);
 
         for (int sale : sales) {
-            if (sale < averageSale(sales)) {
+            if (sale < average) {
                 monthLow++; // если продажа ниже средней, то прибавляем счетчик
             }
         }
@@ -67,9 +68,10 @@ public class StatsService {
     public int monthHigherAverage(int[] sales) {
 
         int monthHigh = 0; // счетчик месяцев
+        int average = averageSale(sales);
 
         for (int sale : sales) {
-            if (sale > averageSale(sales)) {
+            if (sale > average) {
                 monthHigh++; // если продажа выше средней, то прибавляем счетчик
             }
         }
